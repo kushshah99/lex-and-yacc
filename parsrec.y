@@ -30,10 +30,16 @@ D  :    DEFAULT':'ST1 BREAK';'
     ;
 ST1    :    WHILE'('E2')' E';'
     |   FOR'('E';'E2';'E')'E';'
-    |    IF'('E2')'THEN E';'
-    |    IF'('E2')'THEN E';'ELSE E';'
+    |   ST2
     |    ST1 ST1
     |    E';'
+    ;
+ST2 :    IF'('E2')'THEN E';'
+    |    IF'('E2')'THEN E';'ELSE E';'  
+    |    IF'('E2')'THEN ST2
+    |    IF'('E2')'THEN ST2 ELSE ST2
+    |   IF'('E2')'THEN ST2 ELSE E';'
+    |   IF'('E2')'THEN E';' ELSE ST2 
     ;
 E2    :    E'<'E
     |    E'>'E

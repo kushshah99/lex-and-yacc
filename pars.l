@@ -9,6 +9,7 @@ then             return THEN;
 while           return WHILE;
 for				return FOR;
 switch         return SWITCH;
+else			return ELSE;
 case             return CASE;
 default         return DEFAULT;
 break           return BREAK;
